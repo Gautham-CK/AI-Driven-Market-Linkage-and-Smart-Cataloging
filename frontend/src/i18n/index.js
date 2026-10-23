@@ -29,10 +29,10 @@ export function LanguageProvider({ children }) {
 
   const t = translations[lang] || translations.en;
 
-  return (
-    <LanguageContext.Provider value={{ lang, setLang, t, languages: languageList }}>
-      {children}
-    </LanguageContext.Provider>
+  return React.createElement(
+    LanguageContext.Provider,
+    { value: { lang, setLang, t, languages: languageList } },
+    children
   );
 }
 
